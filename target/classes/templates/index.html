@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+
+<body>
+<h1>This is main homepage</h1>
+<h1 th:text="${#strings.toUpperCase(name)}+' length of string  '+${#strings.length(name)}+' age = '+${age}"></h1>
+<ul>
+    <li th:each="x,s:${list}">
+        <span th:style="${s.odd} ? 'font-weight:bold':''" th:text="${s.index}+${#strings.toUpperCase(x)}"></span>
+
+    </li>
+
+</ul>
+<div th:switch="${age}">
+    <h1 th:case="18">you are old like 99</h1>
+
+</div>
+
+
+<p>My mother has <span style="color:blue;font-weight:bold;">blue</span> eyes and my father has <span
+        style="color:darkolivegreen;font-weight:bold;">dark green</span> eyes.</p>
+<div style="background-color:black;color:white;padding:20px;">
+    <h2>London</h2>
+    <p>London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan
+        area of over 13 million inhabitants.</p>
+</div>
+</body>
+</html>
